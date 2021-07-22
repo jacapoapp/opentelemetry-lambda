@@ -17,7 +17,7 @@ clean:
 build: clean
 	@echo Building otel collector extension
 	mkdir -p $(BUILD_SPACE)/extensions
-	GOOS=linux GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o $(BUILD_SPACE)/extensions .
+	$(GOBUILD) $(LDFLAGS) -o $(BUILD_SPACE)/extensions .
 
 package: build
 	@echo Package zip file for collector extension layer
